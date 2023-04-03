@@ -68,8 +68,8 @@ void Run(rclcpp::Node::SharedPtr node)
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
-  node = rclcpp::Node::make_shared("ai_test");
-  RCLCPP_INFO(node->get_logger(), "Create ai_test node.");
+  node = rclcpp::Node::make_shared("cyberdog_face_demo");
+  RCLCPP_INFO(node->get_logger(), "Create cyberdog_face_demo node.");
   std::thread process(&Run, node);
   auto face_entry_client_ = node->create_client<FaceEntry>("cyberdog_face_entry_srv");
   while (!face_entry_client_->wait_for_service(std::chrono::seconds(1))) {
